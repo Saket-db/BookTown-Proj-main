@@ -1,8 +1,31 @@
 .modal-body {
     max-height: 19rem;
     overflow: scroll;
-}
-
-.modal-body-2 {
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  .modal-body-2 {
     max-height: 9.6rem;
-}
+    transition: max-height 0.3s ease-in-out;
+  }
+  
+  @media (max-width: 576px) {
+    .modal-body {
+      max-height: 15rem;
+    }
+  
+    .modal-body-2 {
+      max-height: 8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .modal-body {
+      max-height: 17rem;
+    }
+  
+    .modal-body-2 {
+      max-height: 8.5rem;
+    }
+  }
+  
