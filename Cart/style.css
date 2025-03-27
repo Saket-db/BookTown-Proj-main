@@ -1,91 +1,51 @@
-/* General Styles */
+/* General */
 body {
-  background-color: #f8f9fa;
+  background: #f8f9fa;
   font-family: Arial, sans-serif;
 }
 
-/* Shopping Bag Table */
+/* Table */
 .table {
   background: #fff;
   border-radius: 8px;
-  overflow: hidden;
 }
 
 .table th {
-  background-color: #dc3545;
+  background: #dc3545;
   color: white;
-  padding: 12px;
+  padding: 10px;
 }
 
-.table tbody tr {
-  border-bottom: 1px solid #dee2e6;
-}
-
-.table tbody tr:last-child {
-  border-bottom: none;
-}
-
-.table th, .table td {
-  vertical-align: middle;
-}
-
-/* Card Container */
-.card {
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background: #fff;
-}
-
-/* Proceed to Pay Button */
+/* Buttons */
 .btn-danger {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  transition: all 0.3s ease-in-out;
-  padding: 12px;
-  border-radius: 8px;
+  transition: 0.3s;
+  padding: 10px;
 }
 
 .btn-danger:hover {
-  background-color: #b71c1c;
+  background: #b71c1c;
   transform: scale(1.05);
 }
 
-/* Modal Styling */
-.modal-content {
-  border-radius: 10px;
-}
-
+/* Modal */
 .modal-header {
-  background-color: #dc3545;
+  background: #dc3545;
   color: white;
-  border-radius: 10px 10px 0 0;
 }
 
 .modal-footer {
   border-top: none;
 }
 
-.btn-outline-danger {
-  transition: all 0.3s ease-in-out;
-}
-
-.btn-outline-danger:hover {
-  background-color: #dc3545;
-  color: white;
-}
-
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .table th {
-      font-size: 16px;
+      font-size: 14px;
   }
 
   .btn-danger {
-      font-size: 16px;
-      padding: 10px;
-  }
-
-  .modal-content {
-      padding: 10px;
+      font-size: 14px;
   }
 }
