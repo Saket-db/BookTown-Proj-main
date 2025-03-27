@@ -1,31 +1,91 @@
-.modal-body {
-    max-height: 19rem;
-    overflow: scroll;
-    transition: max-height 0.3s ease-in-out;
+/* General Styles */
+body {
+  background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+}
+
+/* Shopping Bag Table */
+.table {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table th {
+  background-color: #dc3545;
+  color: white;
+  padding: 12px;
+}
+
+.table tbody tr {
+  border-bottom: 1px solid #dee2e6;
+}
+
+.table tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+/* Card Container */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+
+/* Proceed to Pay Button */
+.btn-danger {
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.btn-danger:hover {
+  background-color: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* Modal Styling */
+.modal-content {
+  border-radius: 10px;
+}
+
+.modal-header {
+  background-color: #dc3545;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-footer {
+  border-top: none;
+}
+
+.btn-outline-danger {
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-danger:hover {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .table th {
+      font-size: 16px;
   }
-  
-  .modal-body-2 {
-    max-height: 9.6rem;
-    transition: max-height 0.3s ease-in-out;
+
+  .btn-danger {
+      font-size: 16px;
+      padding: 10px;
   }
-  
-  @media (max-width: 576px) {
-    .modal-body {
-      max-height: 15rem;
-    }
-  
-    .modal-body-2 {
-      max-height: 8rem;
-    }
+
+  .modal-content {
+      padding: 10px;
   }
-  
-  @media (max-width: 768px) {
-    .modal-body {
-      max-height: 17rem;
-    }
-  
-    .modal-body-2 {
-      max-height: 8.5rem;
-    }
-  }
-  
+}

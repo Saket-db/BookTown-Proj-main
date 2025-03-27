@@ -1,92 +1,89 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment Form</title>
-    <link href="paymentform.css" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<body>
-    <div class="wrapper">
-        <h2>Payment Form</h2>
+<body style="background-color: #f8f9fa; font-family: Arial, sans-serif;">
+
+    <div style="max-width: 500px; background: white; padding: 30px; margin: 50px auto; 
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); border-radius: 12px; text-align: center;">
+
+        <h2 style="color: #dc3545; margin-bottom: 20px;">Payment Form</h2>
+
         <form method="POST">
-            <h4>Account</h4>
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="text" placeholder="Full Name" required class="name">
-                    <i class="fa fa-user icon"></i>
-                </div>
-                <div class="input-box">
-                    <input type="text" placeholder="Nick Name" required class="name">
-                    <i class="fa fa-user icon"></i>
-                </div>
+
+            <h4 style="text-align: left; color: #333;">Account</h4>
+
+            <div style="display: flex; gap: 10px; margin-bottom: 15px;">
+                <input type="text" placeholder="Full Name" required
+                    style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                <input type="text" placeholder="Nick Name" required
+                    style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
             </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="email" placeholder="Email Adress" required class="name">
-                    <i class="fa fa-envelope icon"></i>
-                </div>
+
+            <input type="email" placeholder="Email Address" required
+                style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-bottom: 15px;">
+
+            <div style="display: flex; gap: 10px; align-items: center; margin-bottom: 15px;">
+                <h4 style="margin: 0; color: #333;">Date of Birth</h4>
+                <input type="text" placeholder="DD" style="width: 30%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                <input type="text" placeholder="MM" style="width: 30%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                <input type="text" placeholder="YYYY" style="width: 40%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
             </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <h4> Date of Birth</h4>
-                    <input type="text" placeholder="DD" class="dob">
-                    <input type="text" placeholder="MM" class="dob">
-                    <input type="text" placeholder="YYYY" class="dob">
-                </div>
-                <div class="input-box">
-                    <h4> Gender</h4>
-                    <input type="radio" id="b1" name="gendar" checked class="radio">
-                    <label for="b1">Male</label>
-                    <input type="radio" id="b2" name="gendar" class="radio">
-                    <label for="b2">Female</label>
-                </div>
+
+            <h4 style="text-align: left; color: #333;">Gender</h4>
+            <label style="margin-right: 10px;">
+                <input type="radio" name="gender" checked> Male
+            </label>
+            <label>
+                <input type="radio" name="gender"> Female
+            </label>
+
+            <h4 style="text-align: left; color: #333; margin-top: 15px;">Payment Details</h4>
+            <label style="display: block; text-align: left;">
+                <input type="radio" name="pay" checked> <i class="fa fa-cc-visa"></i> Credit Card
+            </label>
+            <label style="display: block; text-align: left;">
+                <input type="radio" name="pay"> <i class="fa fa-cc-paypal"></i> PayPal
+            </label>
+
+            <input type="tel" placeholder="Card Number" required
+                style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 10px;">
+            <input type="tel" placeholder="Card CVC" required
+                style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; margin-top: 10px;">
+
+            <div style="display: flex; gap: 10px; margin-top: 10px;">
+                <select style="width: 50%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <option>01 Jun</option>
+                    <option>02 Jun</option>
+                    <option>03 Jun</option>
+                </select>
+                <select style="width: 50%; padding: 10px; border-radius: 6px; border: 1px solid #ccc;">
+                    <option>2023</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                </select>
             </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <h4>Payment Details</h4>
-                    <input type="radio" name="pay" id="bc1" checked class="radio">
-                    <label for="bc1"><span><i class="fa fa-cc-visa"></i> Credit Card</span></label>
-                    <input type="radio" name="pay" id="bc2" class="radio">
-                    <label for="bc2"><span><i class="fa fa-cc-paypal"></i> Paypal</span></label>
-                </div>
-            </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="tel" placeholder="Card Number" required class="name">
-                    <i class="fa fa-credit-card icon"></i>
-                </div>
-            </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <input type="tel" placeholder="Card CVC" required class="name">
-                    <i class="fa fa-user icon"></i>
-                </div>
-                <div class="input-box">
-                    <select>
-                        <option>01 jun</option>
-                        <option>02 jun</option>
-                        <option>03 jun</option>
-                    </select>
-                    <select>
-                        <option>2020</option>
-                        <option>2021</option>
-                        <option>2022</option>
-                    </select>
-                </div>
-            </div>
-            <div class="input-group">
-                <div class="input-box">
-                    <button type="submit" onclick="window.open('http://127.0.0.1:5500/ErrorPage/index.html','_self','resizable=yes')">PAY NOW</button>
-                </div>
-            </div>
+
+            <button type="submit" 
+                style="width: 100%; padding: 10px; border-radius: 50px; background-color: #dc3545; color: white; 
+                font-size: 16px; font-weight: bold; margin-top: 20px; border: none; cursor: pointer;"
+                onclick="window.open('http://127.0.0.1:5500/ErrorPage/index.html', '_self', 'resizable=yes')">
+                PAY NOW
+            </button>
+
+            <a href="../Home-Page/index.html" 
+                style="display: inline-block; margin-top: 15px; padding: 10px 20px; border-radius: 50px; 
+                border: 1px solid #333; color: #333; text-decoration: none;">
+                <i class="fa fa-home"></i> Home
+            </a>
+
         </form>
     </div>
-</body>
 
+</body>
 </html>
