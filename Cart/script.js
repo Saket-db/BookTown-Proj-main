@@ -1,52 +1,53 @@
-// Existing JavaScript code
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("Cart Page Loaded");
 
-// Function to update modal content
-function updateModalContent() {
-  const modalBody = document.querySelector(".modal-body");
-  const modalBody2 = document.querySelector(".modal-body-2");
+  // Load cart items from localStorage or create an empty array if none exist
+  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  console.log("Cart Items from Storage:", cartItems);
 
-  // Clear existing content
-  modalBody.innerHTML = '';
-  modalBody2.innerHTML = '';
+  const productItemsList = document.getElementById("productItemsList");
 
-  // Populate modal body with product details
-  parsedData.forEach((product) => {
-    const productBody1 = `
-      <div class="d-flex justify-content-between align-items-center py-3 pe-4">
-        <div class="d-flex align-items-center">
-          <img src="${product.cover}" class="img-fluid rounded-3" style="width: 120px" alt="Book" />
-          <div class="flex-column ms-4">
-            <p class="mb-2 d-none d-sm-inline fs-10">${product.name}</p>
-          </div>
-        </div>
-        <div class="align-middle">
-          <strike class="text-secondary">${product.lastprice || ""}</strike>
-          <p class="mb-0" style="font-weight: 500">$${product.price}</p>
-        </div>
-      </div>
-    `;
-    modalBody.innerHTML += productBody1;
+  // Function to display items in the cart
+  function renderCartItems() {
+    productItemsList.innerHTML = ""; // Clear previous items
+
+    if (cartItems.length === 0) {
+      productItemsList.innerHTML = "<tr><td colspan='2'>Your cart is empty.</td></tr>";
+      return;
+    }
+
+    cartItems.forEach((product, index) => {
+      console.log(`Rendering cart item ${index + 1}:`, product);
+      const row = `
+        <tr>
+          <td>${product.name}</td>
+          <td>$${product.price}</td>
+        </tr>
+      `;
+      productItemsList.innerHTML += row;
+    });
+  }
+
+  // Function to add a book to cart
+  function addToCart(book) {
+    cartItems.push(book);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems)); // Save updated cart
+    console.log("Cart updated:", cartItems);
+    renderCartItems();
+  }
+
+  // Listen for clicks on "Add to Cart" buttons
+  document.querySelectorAll(".add-to-cart-btn").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const book = {
+        name: event.target.getAttribute("data-name"),
+        price: event.target.getAttribute("data-price"),
+        cover: event.target.getAttribute("data-cover"),
+      };
+      addToCart(book);
+    });
   });
 
-  // Calculate total price
-  let totalPrice = parsedData.reduce((sum, product) => sum + parseFloat(product.price), 0);
-  totalPrice = Math.round(totalPrice * 100) / 100;
-
-  // Populate modal body 2 with total price
-  const productBody2 = `
-    <div class="mb-5">
-      <div class="form-floating">
-        <input type="number" class="form-control border border-danger border-opacity-25" id="form3Examplea2" placeholder="v" />
-        <label class="form-label" for="form3Examplea2">Enter your discount code (e.g., 1-70)</label>
-      </div>
-    </div>
-    <div class="d-flex justify-content-between">
-      <h5 class="text-uppercase">Total price:</h5>
-      <h5>$${totalPrice}</h5>
-    </div>
-  `;
-  modalBody2.innerHTML = productBody2;
-}
-
-// Call the function to update modal content
-updateModalContent();
+  // Render cart on page load
+  renderCartItems();
+});
